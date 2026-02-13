@@ -1,0 +1,215 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+/* Stock Intelligence Dashboard Design System
+   Professional finance aesthetic - Bloomberg meets modern fintech */
+
+@layer base {
+  :root {
+    /* Core palette - Professional slate/navy */
+    --background: 210 20% 98%;
+    --foreground: 222 47% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    /* Primary - Deep navy blue */
+    --primary: 222 47% 11%;
+    --primary-foreground: 210 40% 98%;
+
+    /* Secondary - Subtle slate */
+    --secondary: 214 32% 91%;
+    --secondary-foreground: 222 47% 11%;
+
+    /* Muted - Light gray for backgrounds */
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+
+    /* Accent - Professional blue */
+    --accent: 217 91% 60%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 217 91% 60%;
+
+    --radius: 0.5rem;
+
+    /* Semantic colors for finance UI */
+    --success: 142 71% 45%;
+    --success-foreground: 0 0% 100%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+    --info: 217 91% 60%;
+    --info-foreground: 0 0% 100%;
+
+    /* Metric card colors */
+    --metric-positive: 142 71% 45%;
+    --metric-negative: 0 84% 60%;
+    --metric-neutral: 215 16% 47%;
+
+    /* Section colors */
+    --section-header: 222 47% 11%;
+    --section-border: 214 32% 91%;
+
+    /* SWOT colors */
+    --swot-strength: 142 71% 45%;
+    --swot-weakness: 0 84% 60%;
+    --swot-opportunity: 217 91% 60%;
+    --swot-threat: 25 95% 53%;
+
+    /* Typography */
+    --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+    /* Sidebar */
+    --sidebar-background: 222 47% 11%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 217 91% 60%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 222 47% 18%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 222 47% 18%;
+    --sidebar-ring: 217 91% 60%;
+  }
+
+  .dark {
+    --background: 222 47% 6%;
+    --foreground: 210 40% 98%;
+
+    --card: 222 47% 9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222 47% 9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222 47% 11%;
+
+    --secondary: 222 47% 15%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 222 47% 15%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 217 91% 60%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 222 47% 18%;
+    --input: 222 47% 18%;
+    --ring: 217 91% 60%;
+
+    --sidebar-background: 222 47% 6%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 217 91% 60%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 222 47% 12%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 222 47% 12%;
+    --sidebar-ring: 217 91% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: var(--font-sans);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold tracking-tight;
+  }
+
+  code, pre {
+    font-family: var(--font-mono);
+  }
+}
+
+@layer components {
+  .metric-card {
+    @apply bg-card rounded-lg border p-4 shadow-sm transition-shadow hover:shadow-md;
+  }
+
+  .section-header {
+    @apply text-lg font-semibold text-foreground border-b pb-2 mb-4;
+  }
+
+  .bullet-list {
+    @apply space-y-2;
+  }
+
+  .bullet-item {
+    @apply flex items-start gap-2 text-sm leading-relaxed;
+  }
+
+  .bullet-marker {
+    @apply w-1.5 h-1.5 rounded-full bg-accent mt-2 flex-shrink-0;
+  }
+
+  .stat-pill {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-secondary text-secondary-foreground;
+  }
+
+  .evidence-tag {
+    @apply inline-flex items-center px-2 py-1 rounded text-xs font-mono bg-muted text-muted-foreground;
+  }
+
+  .quality-badge {
+    @apply text-xs text-muted-foreground font-normal;
+  }
+
+  .swot-card {
+    @apply rounded-lg border p-4;
+  }
+
+  .swot-strength {
+    @apply border-l-4 border-l-[hsl(var(--swot-strength))] bg-[hsl(var(--swot-strength)/0.05)];
+  }
+
+  .swot-weakness {
+    @apply border-l-4 border-l-[hsl(var(--swot-weakness))] bg-[hsl(var(--swot-weakness)/0.05)];
+  }
+
+  .swot-opportunity {
+    @apply border-l-4 border-l-[hsl(var(--swot-opportunity))] bg-[hsl(var(--swot-opportunity)/0.05)];
+  }
+
+  .swot-threat {
+    @apply border-l-4 border-l-[hsl(var(--swot-threat))] bg-[hsl(var(--swot-threat)/0.05)];
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .animate-pulse-subtle {
+    animation: pulse-subtle 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  @keyframes pulse-subtle {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.7;
+    }
+  }
+}

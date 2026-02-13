@@ -1,0 +1,13 @@
+FROM python:3.12-slim
+
+WORKDIR /app
+ENV PYTHONPATH=/app
+
+COPY backend/ backend/
+COPY requirements.txt .
+COPY .env .
+
+
+RUN pip install --no-cache-dir -r requirements.txt
+
+CMD ["python", "-m", "uvicorn", "backend.main:app", "--host", "0.0.0.0", "--port", "8000"]
