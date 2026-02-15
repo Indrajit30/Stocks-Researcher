@@ -16,7 +16,7 @@ Actual runtime may take a few minutes depending on data size and API response ti
 
 ---
 
-## ❗ Problem
+## ❗ Problem Statement
 
 Performing fundamental equity research is time-consuming.
 
@@ -109,6 +109,60 @@ docs/           Demo media and example generated reports
 requirements.txt
 README.md
 ```
+
+---
+
+## 🚀 Running Locally
+
+### 1. Clone the repository
+```bash
+git clone https://github.com/Indrajit30/Stocks-Researcher.git
+cd Stocks-Researcher
+```
+
+---
+
+### 2. Backend setup
+```bash
+python -m venv venv
+source venv/bin/activate   # Mac/Linux
+pip install -r requirements.txt
+```
+
+---
+
+### 3. Start the backend server
+```bash
+python -m uvicorn backend.main:app --port 8000
+```
+
+Backend will be available at:
+```
+http://127.0.0.1:8000
+```
+
+---
+
+### 4. Expose the backend (required for the frontend)
+```bash
+ngrok http 8000
+```
+
+💡 The frontend expects a publicly accessible API endpoint.  
+Ngrok creates a secure tunnel to your local machine and provides a temporary public URL.
+
+---
+
+### 5. Frontend setup
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+---
+
+Open the URL shown in the terminal to access the UI.
 
 ---
 
