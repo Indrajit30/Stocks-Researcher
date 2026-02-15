@@ -9,7 +9,7 @@
 ![Stocks Researcher Demo](docs/demo.gif)
 
 ⚠️ **Note:** Report generation involves document retrieval, metric aggregation, and LLM summarization.  
-Actual runtime may take a few minutes depending on data size and API response times.
+Actual runtime may take a couple of minutes depending on data size and API response times.
 
 📄 Example generated report available in the `docs` folder:  
 `MSFT_report (1).pdf`
