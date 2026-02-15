@@ -7,7 +7,7 @@
 ## 🎥 Demo
 
 <p align="center">
-  <img src="docs/demo.gif" width="1000">
+  <img src="docs/demo.gif" width="600">
 </p>
 
 ⚠️ **Note:** Report generation involves document retrieval, metric aggregation, and LLM summarization.  
