@@ -6,7 +6,9 @@
 
 ## 🎥 Demo
 
-![Stocks Researcher Demo](docs/demo.gif)
+<p align="center">
+  <img src="docs/demo.gif" width="1000">
+</p>
 
 ⚠️ **Note:** Report generation involves document retrieval, metric aggregation, and LLM summarization.  
 Actual runtime may take a couple of minutes depending on data size and API response times.
