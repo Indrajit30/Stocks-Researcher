@@ -130,7 +130,14 @@ python -m venv venv
 source venv/bin/activate   # Mac/Linux
 pip install -r requirements.txt
 ```
+Before starting the backend, create a .env file in the root directory of the project.
 
+Add the following inside the .env file:
+
+FMP_API_KEY=your_fmp_api_key
+SEC_USER_AGENT=StockIntel (XYZ@gmail.com)
+OPENAI_API_KEY=your_openai_api_key
+NEWS_API_KEY=your_news_api_key
 ---
 
 ### 3. Start the backend server
